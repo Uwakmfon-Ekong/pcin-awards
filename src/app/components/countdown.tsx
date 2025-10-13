@@ -60,11 +60,7 @@ export function CountdownTimer({ targetDate }: { targetDate: Date }) {
               {item.label}
             </div>
             {/* Add colon between units except the last one */}
-            {index < 3 && (
-              <div className="absolute  sm:block text-3xl md:text-5xl text-muted-foreground font-bold -right-4 sm:right-[-1.5rem] lg:right-[-2rem]">
-                :
-              </div>
-            )}
+           
           </div>
         ))}
       </div>
