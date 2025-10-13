@@ -17,10 +17,7 @@ export default function HeroSection() {
             <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight text-balance">
               Photography and Cinematography Industry Night and Awards 2026
             </h1>
-            {/* <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-              Celebrating excellence in visual storytelling and honoring the artists who capture our world through their
-              lens
-            </p> */}
+            
           </div>
         </div>
       </div>

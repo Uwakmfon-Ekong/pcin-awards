@@ -2,6 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import logo from '../../../public/pcinlogo.svg'
+import { Button } from "./button"
 // import { Button } from "@/components/ui/button"
 
 
@@ -32,7 +33,7 @@ export function Navigation() {
         </Link>
       </div>
 
-      <button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">NOMINATE</button>
+      <Button className="bg-orange-600 text-primary-foreground hover:bg-primary/90 font-semibold px-4 py-3 cursor-pointer">NOMINATE</Button>
     </nav>
   )
 }
