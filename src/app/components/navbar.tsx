@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
-import logo from '../../../public/pcinlogo.svg'
+import logo from '../../../public/pcinlogo.png'
 import { Button } from "./button"
 // import { Button } from "@/components/ui/button"
 
@@ -15,25 +15,30 @@ export function Navigation() {
         </div>
       </Link>
 
-      <div className="hidden md:flex items-center gap-8">
-        <Link href="/" className="text-foreground hover:underline transition-colors text-sm font-medium">
+      <div className="hidden md:flex items-center gap-8 ">
+        <Link href="/" className="text-background hover:underline transition-colors text-sm font-medium">
           Home
         </Link>
-        <Link href="/about" className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+         <Link href="/about" className="text-background hover:text-primary transition-colors text-sm font-medium">
           About
         </Link>
-        <Link href="/awards" className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+        <Link href="/gallery" className="text-background hover:text-primary transition-colors text-sm font-medium">
+         Gallery
+        </Link>
+        <Link href="/awards" className="text-background hover:text-primary transition-colors text-sm font-medium">
           2025 Awards
         </Link>
-        <Link href="/partners" className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+        <Link href="/partners" className="text-background hover:text-primary transition-colors text-sm font-medium">
           Partners & Sponsors
         </Link>
-        <Link href="/contact" className="text-foreground hover:text-primary transition-colors text-sm font-medium">
+        <Link href="/contact" className="text-background hover:text-primary transition-colors text-sm font-medium">
           Contact
         </Link>
       </div>
 
+      <Link href="/nomination">
       <Button className="bg-orange-600 text-primary-foreground hover:bg-primary/90 font-semibold px-4 py-3 cursor-pointer">NOMINATE</Button>
+      </Link>
     </nav>
   )
 }
