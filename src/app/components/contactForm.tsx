@@ -121,7 +121,7 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="h-12 px-8 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-md transition-colors duration-200 flex items-center gap-2"
+        className="h-12 px-8 bg-orange-600 hover:bg-amber-700 text-white font-semibold rounded-md transition-colors duration-200 flex items-center gap-2"
       >
         <Send className="h-4 w-4" />
         GET IN TOUCH

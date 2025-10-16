@@ -1,6 +1,7 @@
 import { Navigation } from "../components/navbar"
 import { Footer } from "../components/footer"
 import { Award } from "lucide-react"
+import { DecorativeBorder } from "../components/decorativebackground"
 
 const categories = [
   { number: 1, title: "Life Time Achievement Award" },
@@ -94,7 +95,7 @@ export default function NominationPage() {
           </div>
         </div>
       </main>
-
+<DecorativeBorder />
       <Footer />
     </div>
   )

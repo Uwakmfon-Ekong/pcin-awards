@@ -1,25 +1,33 @@
-// import { VideoBackground } from "@/components/video-background"
-// import { Navigation } from "../components/navbar";
-
 import { Navigation } from "./navbar"
+import { VideoBackground } from "./videoBackground"
 
 export default function HeroSection() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-white">
-      {/* <VideoBackground /> */}
+    <main className="relative min-h-screen overflow-hidden">
+      
+      <VideoBackground />
 
-      <div className="relative z-10">
-       {/* <Navigation> */}
-       <Navigation />
+      <div className="relative z-10 flex flex-col min-h-screen">
+       
+        <Navigation />
 
-        <div className="flex items-center justify-center min-h-[calc(100vh-100px)] px-6">
-          <div className="max-w-6xl mx-auto text-center">
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-background mb-6 leading-tight text-balance">
+       
+        <section className="flex flex-1 items-center justify-center px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 text-center">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="
+              font-serif 
+              text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl 
+              font-bold 
+             
+              leading-snug sm:leading-tight md:leading-tight lg:leading-[1.1] 
+              text-balance
+              mb-6
+            ">
               Photography and Cinematography Industry Night and Awards
             </h1>
-            
+
           </div>
-        </div>
+        </section>
       </div>
     </main>
   )

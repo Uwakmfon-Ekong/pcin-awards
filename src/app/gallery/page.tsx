@@ -12,6 +12,7 @@ import { ImageCarousel } from "../components/imagecarousel";
 import { Button } from "../components/button";
 import { Footer } from "../components/footer";
 import { EyeIcon } from "lucide-react";
+import { DecorativeBorder } from "../components/decorativebackground";
 
 
 
@@ -42,6 +43,7 @@ export default function AboutPage() {
           </Button>
         </div>
       </div>
+      <DecorativeBorder />
       <Footer />
     </div>
   );
