@@ -1,5 +1,4 @@
 import { Navigation } from "../components/navbar";
-import Image from "next/image";
 
 import image1 from "../../../public/WhatsApp Image 2025-10-10 at 22.22.14.jpeg";
 import image2 from "../../../public/WhatsApp Image 2025-10-10 at 22.22.22.jpeg";

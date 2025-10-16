@@ -1,3 +1,5 @@
+"use client";
+
 import { Navigation } from "../components/navbar";
 import { Footer } from "../components/footer";
 import { Button } from "../components/button";
@@ -7,11 +9,13 @@ import eventImage from "../../../public/WhatsApp Image 2025-10-15 at 15.47.35.jp
 import { CountdownTimer } from "../components/countdown";
 
 export default function AboutPage() {
-    const eventDate = new Date("2025-12-10T18:30:00");
+  const eventDate = new Date("2025-12-10T18:30:00");
+
   return (
     <div className="min-h-screen bg-white">
-        <Navigation />
+      <Navigation />
       <DecorativeBorder />
+
       <main className="px-6 py-16 lg:px-12 font-poppins">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -51,7 +55,7 @@ export default function AboutPage() {
                 <p>
                   Our vision is to build a platform for photographers,
                   cinematographers, and visual creatives through a community
-                  give-back initiative and an award "program" that is
+                  give-back initiative and an award {'"program"'} that is
                   standardised and industrialised to recognise and validate the
                   timeless works of impact makers, trailblazing in their arts.
                 </p>
@@ -62,6 +66,7 @@ export default function AboutPage() {
               </Button>
             </div>
 
+            {/* Right Column - Image */}
             <div className="w-full lg:w-1/2">
               <Image
                 src={eventImage}
@@ -72,16 +77,18 @@ export default function AboutPage() {
           </div>
         </div>
       </main>
-      <div className="bg-black py-20 flex flex-col items-center justify-center text-center px-6">
+
+      {/* Countdown Section */}
+      <div className="bg-black py-20 flex flex-col items-center justify-center text-center px-6 text-white">
         <div className="py-5 space-y-5 font-semibold font-playfair text-[30px]">
-            <h1>REGISTER TO ATTEND</h1>
-        <p>The events starts in</p>
+          <h1>REGISTER TO ATTEND</h1>
+          <p>The event starts in</p>
         </div>
-  <CountdownTimer targetDate={eventDate} />
-  <Button className="bg-orange-600 focus:ring-0 text-white px-8 py-6 text-base font-semibold mt-10">
-                RESERVE A SEAT
-              </Button>
-</div>
+        <CountdownTimer targetDate={eventDate} />
+        <Button className="bg-orange-600 focus:ring-0 text-white px-8 py-6 text-base font-semibold mt-10">
+          RESERVE A SEAT
+        </Button>
+      </div>
 
       <DecorativeBorder />
       <Footer />

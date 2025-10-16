@@ -1,7 +1,6 @@
 import { DecorativeBorder } from "../components/decorativebackground"
 import { Navigation } from "../components/navbar"
-import Image from "next/image";
-import eventImage from "../../../public/WhatsApp Image 2025-10-15 at 15.47.35.jpeg"
+
 
 export default function EventRegistration() {
   return (

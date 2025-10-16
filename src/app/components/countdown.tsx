@@ -46,7 +46,7 @@ export function CountdownTimer({ targetDate }: { targetDate: Date }) {
           { label: "Hours", value: timeLeft.hours },
           { label: "Minutes", value: timeLeft.minutes },
           { label: "Seconds", value: timeLeft.seconds },
-        ].map((item, index) => (
+        ].map((item) => (
           <div
             key={item.label}
             className="flex flex-col items-center min-w-[60px] sm:min-w-[70px] md:min-w-[90px]"
