@@ -1,8 +1,14 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { User, Mail, Phone, Info, Send } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
+import AOS from "aos"
+import "aos/dist/aos.css"
+import "../../app/globals.css"
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -13,119 +19,118 @@ export function ContactForm() {
     message: "",
   })
 
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true })
+  }, [])
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log("Form submitted:", formData)
-    // Handle form submission here
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 text-foreground">
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium text-gray-700">
-            Name
-          </label>
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-6 w-[100%] lg:px-0 px-6 text-slate-900"
+      data-aos="fade-left"
+    >
+      <div className="w-full grid lg:grid-cols-2 grid-col-1 gap-4">
+        {/** Name */}
+       
+         <div className="space-y-2">
+          <Label htmlFor="name">Name</Label>
           <div className="relative">
-            <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-            <input
+            <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+            <Input
               id="name"
-              type="text"
               name="name"
-              placeholder="Enter your name"
+              placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full h-12 pl-10 pr-4 border-b text-black border-gray-300 rounded-md focus:outline-none text-"
+              className="pl-10 border-b border-gray-300 rounded-md focus:ring-0 focus:border-primary py-6"
               required
             />
           </div>
         </div>
 
+        {/** Email */}
         <div className="space-y-2">
-          <label htmlFor="email" className="text-sm font-medium text-gray-700">
-            Email Address
-          </label>
+          <Label htmlFor="email">Email</Label>
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-            <input
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+            <Input
               id="email"
               type="email"
               name="email"
-              placeholder="Enter your email"
+              placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full h-12 pl-10 pr-4 border-b text-black border-gray-300 rounded-md focus:outline-none"
+              className="pl-10 py-6 border-b  border-gray-300 rounded-md focus:ring-0 focus:border-primary "
               required
             />
           </div>
         </div>
+      
 
+        {/** Phone */}
         <div className="space-y-2">
-          <label htmlFor="phone" className="text-sm font-medium text-gray-700">
-            Phone
-          </label>
+          <Label htmlFor="phone">Phone</Label>
           <div className="relative">
-            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-            <input
+            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+            <Input
               id="phone"
               type="tel"
               name="phone"
-              placeholder="Enter your phone number"
+              placeholder="Your Phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full h-12 pl-10 pr-4 border-b border-gray-300 rounded-md focus:outline-none text-black"
+              className="pl-10 border-b py-6 border-gray-300 rounded-md focus:ring-0 focus:border-primary "
             />
           </div>
         </div>
 
+        {/** Subject */}
         <div className="space-y-2">
-          <label htmlFor="subject" className="text-sm font-medium text-gray-700">
-            Subject
-          </label>
+          <Label htmlFor="subject">Subject</Label>
           <div className="relative">
-            <Info className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-            <input
+            <Info className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+            <Input
               id="subject"
-              type="text"
               name="subject"
-              placeholder="Enter subject"
+              placeholder="Subject"
               value={formData.subject}
               onChange={handleChange}
-              className="w-full h-12 pl-10 pr-4 border-b border-gray-300 rounded-md focus:outline-none text-black"
+              className="pl-10 border-b py-6 border-gray-300 rounded-md focus:ring-0 focus:border-primary"
             />
           </div>
         </div>
       </div>
 
+      {/** Message */}
       <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium text-gray-700">
-          Message
-        </label>
-        <textarea
+        <Label htmlFor="message">Message</Label>
+        <Textarea
           id="message"
           name="message"
-          placeholder="How can we help you? Feel free to get in touch!"
+          placeholder="How can we help you?"
           value={formData.message}
           onChange={handleChange}
-          className="w-full min-h-[200px] p-4 border-b -b-gray-300 rounded-md resize-none focus:outline-none text-black"
           required
+          className="border-b border-gray-300 rounded-md focus:ring-0 focus:outline-none focus:border-primary min-h-[150px] resize-none py-3"
         />
       </div>
 
-      <button
+      {/** Submit Button */}
+      <Button
         type="submit"
-        className="h-12 px-8 bg-orange-600 hover:bg-amber-700 text-white font-semibold rounded-md transition-colors duration-200 flex items-center gap-2"
+        className="flex items-center gap-2 bg-primary rounded-md text-white font-semibold px-6 py-3 w-full md:w-auto justify-center"
       >
-        <Send className="h-4 w-4" />
-        GET IN TOUCH
-      </button>
+        <Send className="h-4 w-4" /> Send Message
+      </Button>
     </form>
   )
 }
