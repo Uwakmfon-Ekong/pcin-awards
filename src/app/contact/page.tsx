@@ -21,10 +21,10 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5 text-background" />
                 </div>
                 <a
-                  href="mailto:aksphotoandvideoguild@gmail.com"
+                  href="mailto:pcinaofficial@gmail.com"
                   className="text-background hover:text-primary transition-colors text-lg"
                 >
-                 aksphotoandvideoguild@gmail.com
+                 pcinaofficial@gmail.com
                 </a>
               </div>
 

@@ -1,78 +1,66 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef } from "react"
-import Image, { StaticImageData } from "next/image"
+import { useState, useEffect } from "react";
+import Image, { StaticImageData } from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface CarouselImage {
-  src: string | StaticImageData
-  alt: string
+  src: string | StaticImageData;
+  alt: string;
 }
 
-interface ImageCarouselProps {
-  images: CarouselImage[]
-  autoPlayInterval?: number
+interface GalleryFadeCarouselProps {
+  images: CarouselImage[];
 }
 
-export function ImageCarousel({ images, autoPlayInterval = 3000 }: ImageCarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const thumbnailsRef = useRef<HTMLDivElement>(null)
+export function GalleryFadeCarousel({ images }: GalleryFadeCarouselProps) {
+  const [current, setCurrent] = useState(0);
 
-  // Auto play effect
+  useEffect(() => {
+    AOS.init({ duration: 800, easing: "ease-in-out", once: true });
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length)
-    }, autoPlayInterval)
-    return () => clearInterval(interval)
-  }, [images.length, autoPlayInterval])
-
-  // Scroll thumbnails in sync with main image
-  useEffect(() => {
-    if (thumbnailsRef.current) {
-      const thumbnailWidth = thumbnailsRef.current.scrollWidth / images.length
-      thumbnailsRef.current.scrollTo({
-        left: thumbnailWidth * currentIndex,
-        behavior: "smooth",
-      })
-    }
-  }, [currentIndex, images.length])
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-6">
-      {/* Main image */}
-      <div className="relative w-full aspect-[20/9] rounded-sm overflow-hidden shadow-lg">
-        <Image
-          src={images[currentIndex].src}
-          alt={images[currentIndex].alt}
-          fill
-          className="object-cover transition-opacity duration-700 ease-in-out"
-          priority
-        />
-      </div>
-
-      {/* Thumbnails */}
-      <div
-        ref={thumbnailsRef}
-        className="flex gap-4 w-full overflow-x-auto scroll-smooth scrollbar-hide overflow-y-hidden"
-      >
+    <div className="relative w-full max-w-6xl mx-auto" data-aos="fade-up">
+      <div className="relative h-[450px] overflow-hidden rounded-md">
         {images.map((img, index) => (
-          <button
+          <Image
             key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`relative flex-shrink-0 w-1/3 lg:w-1/5 aspect-[16/9] rounded-sm overflow-hidden transition-transform hover:scale-105 ${
-              index === currentIndex
-                ? "ring-2 ring-orange-600"
-                : "opacity-70 hover:opacity-100"
+            src={img.src}
+            alt={img.alt}
+            fill
+            className={`object-cover transition-opacity duration-1000 ${
+              index === current ? "opacity-100" : "opacity-0"
             }`}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              className="object-cover"
-            />
-          </button>
+          />
         ))}
       </div>
+
+      {/* Controls */}
+      <div className="absolute inset-0 flex items-center justify-between px-4">
+        <button
+          onClick={() =>
+            setCurrent((prev) => (prev - 1 + images.length) % images.length)
+          }
+          className="bg-black/40 text-white px-4 py-2 rounded-md hover:bg-black/70"
+        >
+          ‹
+        </button>
+        <button
+          onClick={() => setCurrent((prev) => (prev + 1) % images.length)}
+          className="bg-black/40 text-white px-4 py-2 rounded-md hover:bg-black/70"
+        >
+          ›
+        </button>
+      </div>
     </div>
-  )
+  );
 }
