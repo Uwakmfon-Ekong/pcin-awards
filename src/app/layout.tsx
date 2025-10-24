@@ -1,4 +1,6 @@
 
+import { Toaster } from "sonner"
+
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display, Inter, Poppins, Roboto } from "next/font/google";
@@ -58,6 +60,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${playfair.variable} ${poppins.variable} ${roboto.variable} font-interantialiased`}
       >
         {children}
+          <Toaster richColors position="top-right" />
       </body>
     </html>
   );

@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <HeroSection />
          <CountdownSection />
-         <DecorativeBorder />
+         {/* <DecorativeBorder /> */}
          <Footer />
       
 

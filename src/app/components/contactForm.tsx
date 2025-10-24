@@ -1,14 +1,16 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { User, Mail, Phone, Info, Send } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
-import AOS from "aos"
-import "aos/dist/aos.css"
-import "../../app/globals.css"
+import { useState, useEffect } from "react";
+import { User, Mail, Phone, Info, Send } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "../../app/globals.css";
+import emailjs from "emailjs-com";
+import { toast } from "sonner";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -17,20 +19,57 @@ export function ContactForm() {
     phone: "",
     subject: "",
     message: "",
-  })
+  });
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    AOS.init({ duration: 800, once: true })
-  }, [])
+    AOS.init({ duration: 800, once: true });
+  }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-  }
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .send(
+        "service_l6ns06h",
+        "template_3qe1h8e",
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "PGMAT2JTlePvhH-oR"
+      )
+      .then(
+        () => {
+          toast.success("Message sent successfully ✅");
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          toast.error("Failed to send message ❌ Try again later.");
+        }
+      )
+      .finally(() => {
+        setLoading(false);
+      });
+  };
 
   return (
     <form
@@ -39,9 +78,8 @@ export function ContactForm() {
       data-aos="fade-left"
     >
       <div className="w-full grid lg:grid-cols-2 grid-col-1 gap-4">
-        {/** Name */}
-       
-         <div className="space-y-2">
+        {/* Name */}
+        <div className="space-y-2">
           <Label htmlFor="name">Name</Label>
           <div className="relative">
             <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
@@ -57,7 +95,7 @@ export function ContactForm() {
           </div>
         </div>
 
-        {/** Email */}
+        {/* Email */}
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
           <div className="relative">
@@ -69,14 +107,13 @@ export function ContactForm() {
               placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
-              className="pl-10 py-6 border-b  border-gray-300 rounded-md focus:ring-0 focus:border-primary "
+              className="pl-10 py-6 border-b border-gray-300 rounded-md focus:ring-0 focus:border-primary"
               required
             />
           </div>
         </div>
-      
 
-        {/** Phone */}
+        {/* Phone */}
         <div className="space-y-2">
           <Label htmlFor="phone">Phone</Label>
           <div className="relative">
@@ -88,12 +125,12 @@ export function ContactForm() {
               placeholder="Your Phone"
               value={formData.phone}
               onChange={handleChange}
-              className="pl-10 border-b py-6 border-gray-300 rounded-md focus:ring-0 focus:border-primary "
+              className="pl-10 border-b py-6 border-gray-300 rounded-md focus:ring-0 focus:border-primary"
             />
           </div>
         </div>
 
-        {/** Subject */}
+        {/* Subject */}
         <div className="space-y-2">
           <Label htmlFor="subject">Subject</Label>
           <div className="relative">
@@ -110,7 +147,7 @@ export function ContactForm() {
         </div>
       </div>
 
-      {/** Message */}
+      {/* Message */}
       <div className="space-y-2">
         <Label htmlFor="message">Message</Label>
         <Textarea
@@ -124,13 +161,16 @@ export function ContactForm() {
         />
       </div>
 
-      {/** Submit Button */}
+      {/* Submit Button */}
       <Button
         type="submit"
-        className="flex items-center gap-2 bg-primary rounded-md text-white font-semibold px-6 py-3 w-full md:w-auto justify-center"
+        disabled={loading}
+        className={`flex items-center gap-2 bg-primary rounded-md text-white font-semibold px-6 py-3 w-full md:w-auto justify-center ${
+          loading ? "opacity-70 cursor-not-allowed" : ""
+        }`}
       >
-        <Send className="h-4 w-4" /> Send Message
+        {loading ? "Sending..." : "Send Message"}
       </Button>
     </form>
-  )
+  );
 }

@@ -40,7 +40,7 @@ export function Navigation() {
             Contact
           </Link>
           <Link href="/nomination">
-            <button className="bg-primary hover:bg-primary/80 text-white px-6 py-2 rounded-lg transition shadow-lg hover:shadow-primary/50">
+            <button className="bg-primary cursor-pointer hover:bg-primary/80 text-white px-6 py-2 rounded-lg transition shadow-lg hover:shadow-primary/50">
               NOMINATE
             </button>
           </Link>

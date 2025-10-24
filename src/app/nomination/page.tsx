@@ -6,9 +6,10 @@ import { Navigation } from "../components/navbar";
 import { Footer } from "../components/footer";
 import { Award } from "lucide-react";
 import { DecorativeBorder } from "../components/decorativebackground";
+import { NominateNowDialog } from "../components/nominationModal";
 
 const categories = [
-  "Life Time Achievement Award",
+ "Life Time Achievement Award",
   "Legendary Photography/Cinematography Industry Icon Award",
   "Rookie Cinematographer of the year",
   "Rookie Photographer of the year",
@@ -39,8 +40,7 @@ const categories = [
   "Media Personality of the year",
   "Event Reporter of the Year",
   "Event Media Blog of the Year",
-  "Newspaper of the year",
-  "Radio Station of the year",
+  "Photopreneur of the year",
   "Frame Vendor of the year",
 ];
 
@@ -49,17 +49,20 @@ function CategoryCard({ number, title, delay }: { number: number; title: string;
     <div
       data-aos="fade-up"
       data-aos-delay={delay}
-      className="p-6 py-10 rounded-2xl backdrop-blur-sm bg-white/10 border border-white/20 shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+      className="relative p-6  rounded-xl backdrop-blur-sm bg-white/10 border border-white/20 shadow-lg transition-transform duration-300 cursor-pointer"
     >
-      <div className="flex gap-4">
-        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg">
-          {number}
-        </div>
-        <h3 className="text-black font-semibold text-lg">{title}</h3>
+      
+      
+      <div className="absolute -top-3 -left-3 bg-primary text-white px-4 py-2 text-sm font-bold shadow-md">
+        {number}
+        <span className="absolute -bottom-2 left-0 w-0 h-0 border-l-[12px] border-l-primary border-t-[12px] border-t-transparent"></span>
       </div>
+
+      <h3 className="text-black font-semibold text-lg mt-4">{title}</h3>
     </div>
   );
 }
+
 
 export default function NominationPage() {
   useEffect(() => {
@@ -82,28 +85,18 @@ export default function NominationPage() {
           </p>
         </header>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:px-0 ">
           {categories.map((title, idx) => (
             <CategoryCard key={idx} number={idx + 1} title={title} delay={idx * 50} />
           ))}
         </div>
 
-        <div
-          data-aos="zoom-in"
-          className="mt-16 p-8 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl max-w-3xl mx-auto shadow-xl"
-        >
-          <div className="flex items-center gap-4 mb-4">
-            <Award className="w-7 h-7 text-slate-900" />
-            <h2 className="text-2xl font-bold">Ready to Nominate?</h2>
-          </div>
-          <p className="text-gray-300 mb-4">
-            Reach out to us for inquiries or more information.
-          </p>
-          <div className="space-y-1 text-slate-900 font-medium">
-            <p>07064976480, 07013 682 5543</p>
-            <p className="text-gray-400 text-sm">www.pcinaawards.com</p>
-          </div>
+        
+          <div data-aos="zoom-in" className="mt-16 text-center">
+          <NominateNowDialog />
+          
         </div>
+        
       </main>
 
       <DecorativeBorder />

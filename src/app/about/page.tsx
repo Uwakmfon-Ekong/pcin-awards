@@ -72,11 +72,7 @@ export default function AboutPage() {
                   allows you to live in the past while seeing the future.
                 </p>
 
-                <div className="mt-6">
-                  <Button className="bg-primary focus:ring-0 text-white px-8 py-3 text-base font-semibold rounded-md">
-                    DISCOVER OUR STORY
-                  </Button>
-                </div>
+               
                 <blockquote
                   className="border-l-4 border-primary/80 bg-black/5 p-6 rounded-md"
                   data-aos="fade-up"
@@ -116,10 +112,7 @@ export default function AboutPage() {
 
       {/* Countdown Section */}
       <div className="bg-black py-20 flex flex-col items-center justify-center text-center px-6 text-white" data-aos="zoom-in">
-        <div className="py-5 space-y-3 font-semibold font-playfair text-3xl">
-          <h1>REGISTER TO ATTEND</h1>
-          <p className="text-base text-white/80">The event starts in</p>
-        </div>
+        
         {/* <CountdownTimer targetDate={eventDate} /> */}
        
          <CountdownSection />

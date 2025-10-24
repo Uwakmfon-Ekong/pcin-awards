@@ -83,7 +83,7 @@ export default function ContactPage() {
                   key={idx}
                   href={social.href}
                   target="_blank"
-                  className="flex items-center justify-center w-12 h-12 rounded-full bg-primary border border-white/20 hover:bg-white  transition-all duration-300"
+                  className="flex items-center justify-center w-12 h-12 rounded-full bg-primary border border-white/20 hover:bg-primary/80  transition-all duration-300"
                 >
                   {social.icon}
                 </Link>
@@ -91,7 +91,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Right - Contact Form */}
+         
           <div data-aos="fade-left" className="lg:w-1/2 w-full">
             <ContactForm />
           </div>
