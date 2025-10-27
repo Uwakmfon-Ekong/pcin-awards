@@ -17,7 +17,7 @@ export function Navigation() {
     { name: "About", href: "/about" },
     { name: "Gallery", href: "/gallery" },
     { name: "Sponsorship", href: "/sponsorship" },
-    { name: "2025 edition", href: "/2025edition" },
+    { name: "2025 edition", href: "/thisedition" },
     { name: "Partners & Friends", href: "/partners" },
     { name: "Contact", href: "/contact" },
   ];
