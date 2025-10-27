@@ -40,7 +40,7 @@ export function CountdownTimer({ targetDate }: { targetDate: Date }) {
   return (
     <div className="flex flex-col items-center justify-center w-full space-y-6 sm:space-y-8">
       {/* Timer Grid */}
-      <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 font-inter">
+      <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 font-inter text-primary/70">
         {[
           { label: "Days", value: timeLeft.days },
           { label: "Hours", value: timeLeft.hours },
@@ -51,12 +51,12 @@ export function CountdownTimer({ targetDate }: { targetDate: Date }) {
             key={item.label}
             className="flex flex-col items-center min-w-[60px] sm:min-w-[70px] md:min-w-[90px]"
           >
-            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-foreground">
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold ">
               {formatNumber(item.value)}
             </div>
             
             <div className="border-t-2 border-[#1E1E1E] w-[40%] mt-4"></div>
-            <div className="text-sm sm:text-base text-muted-foreground mt-4 font-semibold">
+            <div className="text-sm sm:text-base mt-4 font-semibold">
               {item.label}
             </div>
             {/* Add colon between units except the last one */}

@@ -1,3 +1,4 @@
+import AwardsSection from "./components/awardsection";
 import { CountdownSection } from "./components/countdownSection";
 import { DecorativeBorder } from "./components/decorativebackground";
 import { Footer } from "./components/footer";
@@ -8,7 +9,9 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
+      <AwardsSection />
          <CountdownSection />
+
          {/* <DecorativeBorder /> */}
          <Footer />
       

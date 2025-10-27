@@ -4,7 +4,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Navigation } from "../components/navbar";
 import { Footer } from "../components/footer";
-import { Award } from "lucide-react";
 import { DecorativeBorder } from "../components/decorativebackground";
 import { NominateNowDialog } from "../components/nominationModal";
 

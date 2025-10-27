@@ -9,22 +9,25 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
 import emailjs from "emailjs-com";
 import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
 
-export function NominateNowDialog() {
+export function SponsorshipDialog() {
   const [formData, setFormData] = useState({
-    yourName: "",
+    name: "",
     email: "",
-    phone:"",
-    nomineeName: "",
-    category: "",
+    phone: "",
+    message: "",
   });
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -34,25 +37,25 @@ export function NominateNowDialog() {
 
     emailjs
       .send(
-        "service_l6ns06h",       // your EmailJS service ID
-        "template_i8agyu5",      // your EmailJS template ID
+        "service_l6ns06h", // Replace with your EmailJS service ID
+        "template_i8agyu5", // Replace with your EmailJS sponsorship template ID
         {
-          name: formData.yourName,
+          name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          nomineeName: formData.nomineeName,
-          category: formData.category,
+          message: formData.message,
         },
-        "PGMAT2JTlePvhH-oR"      // your EmailJS public key
+        "PGMAT2JTlePvhH-oR" // Replace with your EmailJS public key
       )
       .then(
         () => {
-          toast.success("Nomination submitted ✅");
-          setFormData({ yourName: "", email: "", phone:"", nomineeName: "", category: "" });
+          toast.success("Sponsorship request sent ✅");
+          setFormData({ name: "", email: "", phone: "", message: "" });
+          const closeButton = document.getElementById("closeSponsorDialog");
+          closeButton?.click();
         },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          toast.error("Failed to submit nomination ❌ Try again later.");
+        () => {
+          toast.error("Failed to send request ❌ Try again later.");
         }
       )
       .finally(() => setLoading(false));
@@ -61,26 +64,23 @@ export function NominateNowDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="py-6 px-6">Nominate Now</Button>
+        <Button className="py-6 px-6">Become a Sponsor</Button>
       </DialogTrigger>
-
       <DialogContent className="lg:max-w-lg w-full font-poppins">
         <DialogHeader>
-          <DialogTitle>Nominate Someone</DialogTitle>
+          <DialogTitle>Sponsorship Form</DialogTitle>
         </DialogHeader>
-
         <form onSubmit={handleSubmit} className="space-y-4 mt-4 w-full max-w-md">
           <Input
-            placeholder="Your Name"
-            name="yourName"
-            type="text"
-            value={formData.yourName}
+            placeholder="Full Name"
+            name="name"
+            value={formData.name}
             onChange={handleChange}
             required
             className="py-6"
           />
           <Input
-            placeholder="Email"
+            placeholder="Email Address"
             type="email"
             name="email"
             value={formData.email}
@@ -89,27 +89,18 @@ export function NominateNowDialog() {
             className="py-6"
           />
           <Input
-            placeholder="Nominee Name"
-            name="nomineeName"
-            type="text"
-            value={formData.nomineeName}
-            onChange={handleChange}
-            required
-            className="py-6"
-          />
-          <Input
             placeholder="Phone Number"
             type="tel"
-            name="Phone Number"
+            name="phone"
             value={formData.phone}
             onChange={handleChange}
             required
             className="py-6"
           />
-          <Input
-            placeholder="Category"
-            name="category"
-            value={formData.category}
+          <Textarea
+            placeholder="Message"
+            name="message"
+            value={formData.message}
             onChange={handleChange}
             required
             className="py-6"
@@ -117,11 +108,17 @@ export function NominateNowDialog() {
 
           <Button
             type="submit"
-            className={`w-full mt-2 py-6 ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+            className={`w-full mt-2 py-6 ${
+              loading ? "opacity-70 cursor-not-allowed" : ""
+            }`}
             disabled={loading}
           >
-            {loading ? "Submitting..." : "Submit"}
+            {loading ? "Sending..." : "Submit"}
           </Button>
+
+          <DialogClose asChild>
+            <button id="closeSponsorDialog" className="hidden"></button>
+          </DialogClose>
         </form>
       </DialogContent>
     </Dialog>

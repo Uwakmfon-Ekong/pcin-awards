@@ -4,13 +4,15 @@ import { useEffect } from "react"
 import AOS from "aos"
 import { Navigation } from "./navbar"
 import { VideoBackground } from "./videoBackground"
+import Link from "next/link"
+
 
 export default function HeroSection() {
   useEffect(() => {
     AOS.init({ duration: 1200, once: true })
   }, [])
   return (
-    <main className="relative min-h-screen overflow-hidden">
+    <main className="relative overflow-hidden">
       <VideoBackground />
 
       <div className="relative z-10 flex flex-col min-h-screen bg-black/40">
@@ -41,11 +43,13 @@ export default function HeroSection() {
               className="mt-6 flex justify-center gap-4"
             >
               <button className="bg-primary px-6 py-3 rounded-md text-black font-medium hover:bg-white transition">
-                Get Tickets
+                Get a seat
               </button>
+             <Link href="/nomination">
               <button className="border border-white px-6 py-3 rounded-md text-white hover:bg-white hover:text-black transition">
-                Learn More
+                Nominate now
               </button>
+             </Link>
             </div>
           </div>
         </section>

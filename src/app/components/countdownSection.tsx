@@ -21,7 +21,7 @@ export function CountdownSection() {
             <CountdownTimer targetDate={eventDate} />
 
             <div className="mt-12 flex justify-center">
-              <Button  className="flex gap-2 items-center bg-white text-black hover:bg-gray-100 text-lg px-8 py-4">
+              <Button  className="flex gap-2 items-center bg-primary/80 text-white hover:bg-primary/50 text-lg px-8 py-4">
                 Reserve a Seat
                 <Armchair className=" h-5 w-5" />
               </Button>
