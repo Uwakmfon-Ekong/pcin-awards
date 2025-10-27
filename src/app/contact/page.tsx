@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 import { Navigation } from "../components/navbar";
 import { ContactForm } from "../components/contactForm";
 import { Footer } from "../components/footer";
-import { Mail, Phone, Instagram, Youtube, Facebook } from "lucide-react";
+import { Mail, Phone, Instagram, Facebook } from "lucide-react";
 import Link from "next/link";
 import { DecorativeBorder } from "../components/decorativebackground";
 

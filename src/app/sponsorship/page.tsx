@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -26,7 +25,7 @@ const tiers = [
       "Airtime: 3 minutes (CEO or representative)",
       "Continuous flash of business logo on LED screen",
       "Roll-up banner placement",
-      "Special mention on our videos' end credits",
+      "Special mention on our videos&apos; end credits",
       "Slot in event magazine / brochure",
     ],
     color: "bg-gradient-to-r from-orange-400 to-orange-600",
@@ -40,7 +39,7 @@ const tiers = [
       "Airtime: 2 minutes (CEO or representative)",
       "Continuous flash of business logo on LED screen",
       "Roll-up banner placement",
-      "Special mention on our videos' end credits",
+      "Special mention on our videos&apos; end credits",
       "Slot in event magazine / brochure",
     ],
     color: "bg-yellow-400",
@@ -52,7 +51,7 @@ const tiers = [
     bullets: [
       "Continuous flash of business logo on LED screen",
       "Roll-up banner placement",
-      "Special mention on our videos' end credits",
+      "Special mention on our videos&apos; end credits",
       "Slot in event magazine / brochure",
     ],
     color: "bg-gray-200",
@@ -63,12 +62,12 @@ const tiers = [
     price: "₦200,000",
     bullets: [
       "Roll-up banner placement",
-      "Special mention on our videos' end credits",
+      "Special mention on our videos&apos; end credits",
       "Slot in event magazine / brochure",
     ],
     color: "bg-orange-200",
   },
-]
+];
 
 export default function SponsorshipPage() {
   useEffect(() => {
@@ -107,9 +106,7 @@ export default function SponsorshipPage() {
             >
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="rounded-full" aria-hidden>
-                    {/* <div className="w-12 h-12 rounded-full bg-gray-100" /> */}
-                  </div>
+                  <div className="rounded-full" aria-hidden />
                   <div>
                     <h3 className="text-xl font-semibold">{t.title}</h3>
                     <p className="text-sm text-gray-500">{t.price}</p>
@@ -203,7 +200,7 @@ export default function SponsorshipPage() {
             <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6">
               <h4 className="text-xl font-semibold mb-2">Become a Sponsor</h4>
               <p className="text-sm text-gray-600 mb-4">
-                Fill the form and we'll reach out to finalize your sponsorship.
+                Fill the form and we will reach out to finalize your sponsorship.
               </p>
 
               <SponsorshipForm />
@@ -248,8 +245,7 @@ function SponsorshipForm() {
 
     // honeypot check (client-side)
     if (form.hp) {
-      // silent reject for bots
-      return;
+      return; // silent reject for bots
     }
 
     setLoading(true);
@@ -259,7 +255,6 @@ function SponsorshipForm() {
         access_key: ACCESS_KEY,
         subject: EMAIL_SUBJECT,
         to: TO_EMAIL,
-        // Web3Forms will index fields from the body; include all useful data
         name: form.name,
         email: form.email,
         phone: form.phone,
@@ -270,9 +265,7 @@ function SponsorshipForm() {
 
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
@@ -294,7 +287,6 @@ function SponsorshipForm() {
         hp: "",
       });
 
-      // keep user on page — optionally scroll to the form top
       const sec = document.getElementById("sponsorship-form-section");
       sec?.scrollIntoView({ behavior: "smooth", block: "center" });
     } catch (err) {

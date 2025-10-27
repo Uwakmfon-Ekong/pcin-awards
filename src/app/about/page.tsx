@@ -3,20 +3,13 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import { Navigation } from "../components/navbar";
 import { Footer } from "../components/footer";
-import { Button } from "../components/button";
 import { DecorativeBorder } from "../components/decorativebackground";
 import Image from "next/image";
-// import eventImage from "../../../public/WhatsApp Image 2025-10-15 at 15.47.35.jpeg";
-import eventImage from "../../../public/WhatsApp Image 2025-10-15 at 15.47.35.jpeg";
-import { CountdownTimer } from "../components/countdown";
 import { CountdownSection } from "../components/countdownSection";
 
 export default function AboutPage() {
-  const eventDate = new Date("2025-12-10T18:30:00");
-
   useEffect(() => {
     AOS.init({ duration: 900, once: true, easing: "ease-out-cubic" });
   }, []);
@@ -72,7 +65,6 @@ export default function AboutPage() {
                   allows you to live in the past while seeing the future.
                 </p>
 
-               
                 <blockquote
                   className="border-l-4 border-primary/80 bg-black/5 p-6 rounded-md"
                   data-aos="fade-up"
@@ -111,16 +103,13 @@ export default function AboutPage() {
       </main>
 
       {/* Countdown Section */}
-      <div className="bg-black py-20 flex flex-col items-center justify-center text-center px-6 text-white" data-aos="zoom-in">
-        
-        {/* <CountdownTimer targetDate={eventDate} /> */}
-       
-         <CountdownSection />
-       
-       
+      <div
+        className="bg-black py-20 flex flex-col items-center justify-center text-center px-6 text-white"
+        data-aos="zoom-in"
+      >
+        <CountdownSection />
       </div>
 
-      {/* <DecorativeBorder />ç */}
       <Footer />
     </div>
   );

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Instagram, Youtube, Facebook } from "lucide-react"
+import { Instagram, Facebook } from "lucide-react"
 import Image from "next/image"
 import Logo from "../../../public/pcinlogo.png"
 

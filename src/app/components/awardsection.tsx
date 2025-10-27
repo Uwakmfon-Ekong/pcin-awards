@@ -18,7 +18,7 @@ const AwardsSection = () => {
     "Entertainment",
     "Enterpreneurship",
     "Innovation Pacesetter",
-    "Social Advocacy"
+    "Social Advocacy",
   ];
 
   return (
@@ -42,11 +42,15 @@ const AwardsSection = () => {
           </ul>
         </div>
 
-        {/* Right: Trophy Images */}
-        <div className="md:w-1/2 flex flex-wrap justify-center gap-6" data-aos="fade-left">
-          
-          <Image src={TrophyImage} alt="Trophy" className="object-contain transform transition duration-500 hover:scale-105" />
-
+        <div
+          className="md:w-1/2 flex flex-wrap justify-center gap-6"
+          data-aos="fade-left"
+        >
+          <Image
+            src={TrophyImage}
+            alt="Trophy"
+            className="object-contain transform transition duration-500 hover:scale-105"
+          />
         </div>
       </div>
 
@@ -56,7 +60,8 @@ const AwardsSection = () => {
         data-aos="fade-up"
       >
         <blockquote className="text-xl md:text-2xl italic text-white">
-          "Greatness is not what we have, but what we give to humanity."
+          &quot;Greatness is not what we have, but what we give to
+          humanity.&quot;
         </blockquote>
       </div>
     </section>

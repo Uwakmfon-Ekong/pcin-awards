@@ -2,7 +2,7 @@
 import { Button } from "./button";
 import { CountdownTimer } from "./countdown";
 import { Armchair } from "lucide-react";
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
