@@ -4,15 +4,12 @@ import { Footer } from "./components/footer";
 import HeroSection from "./components/heroSection";
 
 export default function Home() {
-
   return (
-    <div>
+    <div className="min-h-screen overflow-x-hidden font-poppins">
       <HeroSection />
       <AwardsSection />
-         <CountdownSection />
-         <Footer />
-      
-
+      <CountdownSection />
+      <Footer />
     </div>
   );
 }

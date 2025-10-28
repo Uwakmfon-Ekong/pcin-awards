@@ -44,7 +44,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white font-poppins text-slate-900">
+    <div className="min-h-screen overflow-x-hidden bg-white font-poppins text-slate-900">
       <Navigation />
       <DecorativeBorder />
 

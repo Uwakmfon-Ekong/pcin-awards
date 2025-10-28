@@ -70,12 +70,12 @@ const tiers = [
 ];
 
 export default function SponsorshipPage() {
-  useEffect(() => {
+   useEffect(() => {
     AOS.init({ duration: 900, once: true, easing: "ease-out-cubic" });
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen overflow-x-hidden bg-white text-slate-900">
       <Navigation />
       <DecorativeBorder />
 

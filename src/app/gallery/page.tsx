@@ -7,7 +7,6 @@ import image4 from "../../../public/WhatsApp Image 2025-10-10 at 22.22.24 (1).jp
 import image5 from "../../../public/WhatsApp Image 2025-10-10 at 22.22.24 (2).jpeg";
 import image6 from "../../../public/WhatsApp Image 2025-10-10 at 22.28.08.jpeg";
 import image7 from "../../../public/WhatsApp Image 2025-10-11 at 20.39.40.jpeg";
-// import { ImageCarousel } from "../components/imagecarousel";
 import { GalleryFadeCarousel } from "../components/imagecarousel";
 import { Button } from "../components/button";
 import { Footer } from "../components/footer";

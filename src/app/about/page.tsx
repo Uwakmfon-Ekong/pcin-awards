@@ -16,7 +16,7 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
       <Navigation />
       <DecorativeBorder />
 
@@ -25,7 +25,7 @@ export default function AboutPage() {
           {/* Header */}
           <div className="text-left my-12">
             <h2
-              className="lg:text-5xl text-3xl font-bold tracking-tight leading-tight"
+              className="lg:text-5xl text-3xl font-bold tracking-tight leading-tight will-change-transform"
               data-aos="zoom-in"
             >
               A Night of Prestige, <br />
@@ -36,31 +36,27 @@ export default function AboutPage() {
           {/* Two Column Layout */}
           <div className="flex lg:flex-row flex-col items-start justify-between gap-12">
             {/* Left Column - About Content */}
-            <div className="space-y-8 lg:w-1/2" data-aos="fade-right">
+            <div className="space-y-8 lg:w-1/2 will-change-transform" data-aos="fade-right">
               {/* ABOUT */}
               <section>
                 <h3 className="text-xl font-bold text-[#ff6600] mb-3">ABOUT PCINA</h3>
                 <div className="space-y-4 text-gray-700 leading-relaxed text-base">
                   <p>
                     The Photography and Cinematography Industry Night and Awards (PCINA) is
-                    Nigeria’s premier national celebration of excellence in visual
-                    storytelling.
+                    Nigeria’s premier national celebration of excellence in visual storytelling.
                   </p>
-
                   <p>
                     An annual gathering of legends, trailblazers, and emerging talents in
                     photography, cinematography, and drone piloting, PCINA is dedicated to
                     recognizing and honoring individuals and organizations whose creativity,
                     innovation, and impact are shaping the future of the visual arts industry.
                   </p>
-
                   <p>
                     At PCINA, we celebrate the visionaries behind the lens — those whose craft
                     inspires, educates, and transforms perspectives. The event showcases
                     exceptional talent, groundbreaking innovation, and unwavering dedication
                     across every aspect of photography and cinematography.
                   </p>
-
                   <p>
                     Over the years, PCINA has become a beacon of inspiration, shining a
                     spotlight on the brilliance and global relevance of Nigerian creatives.
@@ -69,7 +65,7 @@ export default function AboutPage() {
               </section>
 
               {/* RATIONALE */}
-              <section className="" data-aos="fade-up">
+              <section data-aos="fade-up" className="will-change-transform">
                 <h3 className="text-xl font-bold text-[#ff6600] mt-6 mb-3">RATIONALE</h3>
                 <div className="space-y-4 text-gray-700 leading-relaxed text-base">
                   <p>
@@ -78,14 +74,12 @@ export default function AboutPage() {
                     photographers, filmmakers, and drone pilots making global waves, there’s
                     never been a more important time to celebrate our pacesetters.
                   </p>
-
                   <p>
                     PCINA stands as a platform to honor legends, empower emerging creatives,
                     and inspire innovation across the nation and beyond. Our mission is simple
                     yet profound — to recognize excellence, celebrate achievement, and amplify
                     creativity in every form of visual expression.
                   </p>
-
                   <p>
                     From amateurs to professionals, from fresh ideas to legendary achievements,
                     PCINA welcomes every voice, every vision, and every story that defines the
@@ -95,38 +89,24 @@ export default function AboutPage() {
               </section>
 
               {/* HIGHLIGHTS */}
-              <section className="" data-aos="fade-up">
+              <section data-aos="fade-up" className="will-change-transform">
                 <h3 className="text-xl font-bold text-[#ff6600] mt-6 mb-3">HIGHLIGHTS</h3>
                 <div className="space-y-4 text-gray-700 leading-relaxed text-base">
                   <p>
                     This year’s edition — widely regarded as the “Oscars” of Photography and
-                    Cinematography in Nigeria — promises to be even bigger and better. Bringing
-                    together creatives, brands, and thought leaders from across West Africa,
-                    the 2025 PCINA will feature over 30 award categories, spotlighting
-                    individuals and organizations that are pushing boundaries and redefining
-                    excellence.
+                    Cinematography in Nigeria — promises to be even bigger and better.
                   </p>
-
-                  <p>
-                    This is the 3rd edition — expect something unusual……
-                  </p>
-
+                  <p>This is the 3rd edition — expect something unusual……</p>
                   <p>
                     PCINA is more than an award ceremony; it’s a movement of creatives, a
                     celebration of vision, and a testament to the power of visual storytelling.
                   </p>
                 </div>
               </section>
-
-              
-             
-
-              {/* Quote block */}
-             
             </div>
 
             {/* Right Column - Image */}
-            <div className="space-y-6 lg:w-1/2" data-aos="fade-left">
+            <div className="space-y-6 lg:w-1/2 will-change-transform" data-aos="fade-left">
               <div className="rounded-lg overflow-hidden shadow-xl">
                 <Image
                   src={eventImage}
@@ -138,7 +118,7 @@ export default function AboutPage() {
                 />
               </div>
 
-              {/* small highlights / quick facts */}
+              {/* Quick Facts */}
               <div className="grid grid-cols-2 gap-4 mt-4">
                 <div className="bg-[#fff8f4] p-4 rounded-md border border-gray-100">
                   <h4 className="text-sm font-semibold text-[#ff6600]">Edition</h4>
@@ -150,18 +130,20 @@ export default function AboutPage() {
                 </div>
               </div>
 
-               <blockquote
-                className="border-l-4 border-[#ff6600]/80 bg-[#fff7f0] p-6 rounded-md mt-8"
+              <blockquote
+                className="border-l-4 border-[#ff6600]/80 bg-[#fff7f0] p-6 rounded-md mt-8 will-change-transform"
                 data-aos="fade-up"
               >
                 <p className="text-lg italic text-gray-900 leading-relaxed">
-                  &ldquo;Photography is more than just a profession; it is the bridge between
-                  yesterday and tomorrow — a frame that preserves legacy.&rdquo;
+                  “Photography is more than just a profession; it is the bridge between
+                  yesterday and tomorrow — a frame that preserves legacy.”
                 </p>
                 <cite className="block mt-4 text-sm font-semibold text-gray-700">
                   — Benaiah Pius O.
                 </cite>
-                <div className="text-xs text-gray-500 mt-1">AKWA IBOM STATE PROFESSIONAL PH</div>
+                <div className="text-xs text-gray-500 mt-1">
+                  AKWA IBOM STATE PROFESSIONAL PH
+                </div>
               </blockquote>
             </div>
           </div>
@@ -170,7 +152,7 @@ export default function AboutPage() {
 
       {/* Countdown Section */}
       <div
-        className="bg-black py-20 flex flex-col items-center justify-center text-center px-6 text-white"
+        className="bg-black py-20 flex flex-col items-center justify-center text-center px-6 text-white will-change-transform"
         data-aos="zoom-in"
       >
         <CountdownSection />

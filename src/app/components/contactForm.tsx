@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { User, Mail, Phone, Info, } from "lucide-react";
+import { User, Mail, Phone, Info } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../../app/globals.css";
-import emailjs from "emailjs-com";
 import { toast } from "sonner";
 
 export function ContactForm() {
@@ -33,42 +32,52 @@ export function ContactForm() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .send(
-        "service_l6ns06h",
-        "template_3qe1h8e",
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          subject: formData.subject,
-          message: formData.message,
+    const WEB3FORMS_ACCESS_KEY = "94eb9d0d-9fd4-4ece-8e4f-a536318d5ca2"; // replace with your key
+
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY, // <-- REQUIRED
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      subject: "PCIN Awards Inquiry",
+      message: formData.message,
+      redirect: "", // optional redirect URL
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        "PGMAT2JTlePvhH-oR"
-      )
-      .then(
-        () => {
-          toast.success("Message sent successfully ✅");
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            subject: "",
-            message: "",
-          });
-        },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          toast.error("Failed to send message ❌ Try again later.");
-        }
-      )
-      .finally(() => {
-        setLoading(false);
+        body: JSON.stringify(payload),
       });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Message sent successfully ✅");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        throw new Error(data.message || "Failed to send message");
+      }
+    } catch (error) {
+      console.error("Web3Forms Error:", error);
+      toast.error("Failed to send message ❌ Try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
