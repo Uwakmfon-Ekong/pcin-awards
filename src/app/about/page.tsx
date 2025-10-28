@@ -3,9 +3,6 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Navigation } from "../components/navbar";
-import { Footer } from "../components/footer";
-import { DecorativeBorder } from "../components/decorativebackground";
 import Image from "next/image";
 import eventImage from "../../../public/WhatsApp Image 2025-10-15 at 15.47.35.jpeg";
 import { CountdownSection } from "../components/countdownSection";
@@ -17,8 +14,6 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
-      <Navigation />
-      <DecorativeBorder />
 
       <main className="px-6 py-16 lg:px-12 font-poppins">
         <div className="max-w-7xl mx-auto">
@@ -142,7 +137,7 @@ export default function AboutPage() {
                   — Benaiah Pius O.
                 </cite>
                 <div className="text-xs text-gray-500 mt-1">
-                  AKWA IBOM STATE PROFESSIONAL PH
+                CEO- Lebold Studios
                 </div>
               </blockquote>
             </div>
@@ -158,7 +153,6 @@ export default function AboutPage() {
         <CountdownSection />
       </div>
 
-      <Footer />
     </div>
   );
 }

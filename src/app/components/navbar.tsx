@@ -23,7 +23,7 @@ export function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-lg border-b border-white/10">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3">
+      <div className="2xl:container mx-auto flex items-center justify-between px-4 md:px-6 py-3">
         <Link href="/" className="flex items-center">
           <Image
             src={logo}

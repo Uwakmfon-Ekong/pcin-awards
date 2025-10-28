@@ -3,12 +3,12 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Navigation } from "../components/navbar";
+
 import { ContactForm } from "../components/contactForm";
-import { Footer } from "../components/footer";
+
 import { Mail, Phone, Instagram, Facebook } from "lucide-react";
 import Link from "next/link";
-import { DecorativeBorder } from "../components/decorativebackground";
+
 
 export default function ContactPage() {
   useEffect(() => {
@@ -45,8 +45,6 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-white font-poppins text-slate-900">
-      <Navigation />
-      <DecorativeBorder />
 
       <main className="container mx-auto w-full py-24 lg:px-12  lg:py-24">
         <header className="text-center mb-16" data-aos="fade-down">
@@ -98,7 +96,6 @@ export default function ContactPage() {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }

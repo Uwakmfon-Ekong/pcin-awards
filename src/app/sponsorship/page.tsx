@@ -3,9 +3,6 @@
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Navigation } from "../components/navbar";
-import { DecorativeBorder } from "../components/decorativebackground";
-import { Footer } from "../components/footer";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -75,13 +72,10 @@ export default function SponsorshipPage() {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white text-slate-900">
-      <Navigation />
-      <DecorativeBorder />
-
-      {/* Hero */}
+    <div className="min-h-screen 2xl:container mx-auto overflow-x-hidden bg-white text-slate-900">
+   
       <header className="font-poppins relative py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+        <div className="2xl:container mx-auto px-6 text-center">
           <p className="text-sm uppercase tracking-widest text-orange-600 font-semibold">
             PARTNERSHIP OPPORTUNITIES
           </p>
@@ -209,8 +203,7 @@ export default function SponsorshipPage() {
         </div>
       </section>
 
-      <DecorativeBorder />
-      <Footer />
+      
     </div>
   );
 }

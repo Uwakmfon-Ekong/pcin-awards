@@ -4,9 +4,6 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
-import { Navigation } from "../components/navbar";
-import { DecorativeBorder } from "../components/decorativebackground";
-import { Footer } from "../components/footer";
 import chairPlaceholder from "../../../public/WhatsApp Image 2025-10-27 at 17.39.30.jpeg";
 import AdminBoard from "../components/adminBoard";
 
@@ -17,8 +14,7 @@ export default function Edition2025Page() {
 
   return (
     <div className="min-h-screen bg-black text-white font-poppins">
-      <Navigation />
-      <DecorativeBorder />
+     
 
       {/* Hero background */}
       <section className="pt-10 relative w-full flex items-center" aria-hidden>
@@ -53,7 +49,7 @@ export default function Edition2025Page() {
             data-aos="zoom-in"
             data-aos-delay="50"
           >
-            <div className="relative w-full h-80 sm:h-96 md:h-[80vh] rounded-xl overflow-hidden shadow-2xl border border-white/10">
+            <div className="relative w-full h-[400px] md:h-[600px] xl:h-[700px] rounded-xl overflow-hidden shadow-2xl border border-white/10">
               <Image
                 src={chairPlaceholder}
                 alt="Chairman - Benaiah Pius"
@@ -63,9 +59,9 @@ export default function Edition2025Page() {
             </div>
 
             <div className="mt-4 text-center lg:text-left">
-              <p className="text-sm text-white/70">Chairman</p>
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Benaiah Pius</h3>
-              <p className="mt-1 text-sm text-white/70 italic">Photography & Cinematography Advocate</p>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">Chairman</h3>
+              <p className="text-sm text-white/70">Mr. Benaiah Pius</p>
+              <p className="mt-1 text-sm text-white/70 italic">Pcinawards Board</p>
             </div>
           </div>
 
@@ -119,7 +115,7 @@ export default function Edition2025Page() {
             <p className="mt-4 font-semibold">Welcome to PCINA 2025 — Shutters of Hope… Inspiring Possibilities.</p>
 
             <div className="mt-3">
-              <p className="text-sm text-white/70">— Benaiah Pius</p>
+              <p className="text-sm text-white/70">—Mr. Benaiah Pius</p>
             </div>
           </div>
         </div>
@@ -134,8 +130,7 @@ export default function Edition2025Page() {
         </div>
       </section>
 
-      <DecorativeBorder />
-      <Footer />
+
     </div>
   );
 }

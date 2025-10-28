@@ -9,9 +9,15 @@ import {
   Roboto,
 } from "next/font/google";
 import "./globals.css";
+import { Navigation } from "./components/navbar";
+import { DecorativeBorder } from "./components/decorativebackground";
+import { Footer } from "./components/footer";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
@@ -94,7 +100,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${playfair.variable} ${poppins.variable} ${roboto.variable} font-inter antialiased`}
       >
+        <Navigation />
+        <DecorativeBorder />
         {children}
+        <DecorativeBorder />
+        <Footer />
+
         <Toaster richColors position="top-right" />
       </body>
     </html>

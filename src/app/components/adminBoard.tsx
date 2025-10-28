@@ -12,10 +12,10 @@ type TeamMember = {
 };
 
 const teamMembers: TeamMember[] = [
-  { name: "Mr Life Stanley", role: "Trustee", img: lifImg },
-  { name: "Mr Dickson Enoh", role: "Trustee", img: dicksonImg },
-  { name: "Ms Arit Otioro", role: "Trustee", img: aritImg },
-  { name: "Mr Johnny", role: "Trustee", img: emediongImg },
+  { name: "Mr. Life Stanley", role: "Trustee", img: lifImg },
+  { name: "Mr. Dickson Enoh", role: "Trustee", img: dicksonImg },
+  { name: "Ms. Arit Otioro", role: "Trustee", img: aritImg },
+  { name: "Mr. Emediong Johnny", role: "Trustee", img: emediongImg },
 ];
 
 export default function AdminBoard() {

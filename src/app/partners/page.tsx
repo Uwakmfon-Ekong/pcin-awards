@@ -4,9 +4,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
-import { Navigation } from "../components/navbar";
-import { DecorativeBorder } from "../components/decorativebackground";
-import { Footer } from "../components/footer";
+
 
 // import your logos
 import logo1 from "../../../public/lyfstan.jpeg";
@@ -15,18 +13,17 @@ import logo3 from "../../../public/sirvic.jpeg";
 import logo4 from "../../../public/classicimage.jpeg";
 import logo5 from "../../../public/wildefx.jpeg";
 import logo6 from "../../../public/blezman.jpeg";
+import logo7 from "../../../public/lebold.jpeg";
 
 export default function SponsorsPage() {
   useEffect(() => {
     AOS.init({ duration: 900, once: true, easing: "ease-out-cubic" });
   }, []);
 
-  const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
+  const logos = [logo7, logo1, logo2, logo3, logo4, logo5, logo6];
 
   return (
     <div className="min-h-screen bg-white text-black font-poppins">
-      <Navigation />
-      <DecorativeBorder />
 
       {/* Hero */}
       <section className="relative pt-24 text-center px-6">
@@ -74,8 +71,7 @@ export default function SponsorsPage() {
         </a>
       </section>
 
-      <DecorativeBorder />
-      <Footer />
+     
     </div>
   );
 }

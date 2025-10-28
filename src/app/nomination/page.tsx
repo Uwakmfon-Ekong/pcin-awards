@@ -2,9 +2,8 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Navigation } from "../components/navbar";
-import { Footer } from "../components/footer";
-import { DecorativeBorder } from "../components/decorativebackground";
+
+
 import { NominateNowDialog } from "../components/nominationModal";
 
 const categories = [
@@ -79,9 +78,7 @@ export default function NominationPage() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-poppins overflow-x-hidden">
-      <Navigation />
-      <DecorativeBorder />
-
+      
       <main className="container mx-auto px-4 py-16 md:py-28">
         <header className="text-center mb-16" data-aos="fade-down">
           <p className="text-sm md:text-base tracking-widest mb-2 uppercase text-gray-400">
@@ -112,8 +109,6 @@ export default function NominationPage() {
         </div>
       </main>
 
-      <DecorativeBorder />
-      <Footer />
     </div>
   );
 }
