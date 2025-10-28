@@ -56,7 +56,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/pcinlogo.svg",
   },
-  themeColor: "#000000",
 
   openGraph: {
     title: "PCIN Awards - Celebrating Creative Excellence",

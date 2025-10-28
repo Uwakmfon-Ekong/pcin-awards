@@ -30,7 +30,7 @@ export function Navigation() {
             alt="PCIN Logo"
             width={140}
             height={80}
-            className="w-auto h-14 md:h-20 lg:h-26 object-contain"
+            className="w-auto h-14 md:h-26 lg:h-26 object-contain"
             priority
           />
         </Link>
@@ -69,7 +69,7 @@ export function Navigation() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-white text-black flex flex-col gap-6 px-6 py-6 shadow-md animate-slideDown">
+        <div className="lg:hidden h-100vh bg-white text-black flex flex-col gap-6 px-6 py-6 shadow-md animate-slideDown">
           {navLinks.map(({ name, href }) => (
             <Link
               key={name}

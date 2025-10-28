@@ -26,7 +26,7 @@ export default function Edition2025Page() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/55 to-black/65" />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="max-w-4xl text-center mx-auto" data-aos="zoom-in" data-aos-delay="50">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <span className="h-1 w-14 bg-[#ff6600] rounded" />
@@ -126,7 +126,7 @@ export default function Edition2025Page() {
       </section>
 
       {/* Admin Board */}
-      <section className="bg-gradient-to-b from-black/70 to-black/85 py-12 sm:py-16">
+      <section className="bg-gradient-to-b from-black/70 to-black/85 py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8" data-aos="zoom-in" data-aos-delay="50">
             <AdminBoard />

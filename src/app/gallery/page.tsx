@@ -30,9 +30,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen items-center justify-center bg-foreground font-poppins">
       <Navigation />
-      <div className="flex flex-col items-center justify-center py-10 px-6">
+      <div className="flex flex-col items-center justify-center px-6">
         <DecorativeBorder />
-        <h1 className="lg:text-[56px] text-[40px] font-bold py-10 text-background">2025 Gallery</h1>
+        <h1 className="lg:text-[56px] text-[40px] font-bold py-16 text-background">2025 Gallery</h1>
 
         <div className="w-full py-5 mx-auto container">
         <GalleryFadeCarousel images={GalleryImages} />
