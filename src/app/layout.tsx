@@ -40,7 +40,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pcin-awards.vercel.app"),
+  metadataBase: new URL("https://pcin-awards.pxxl.pro"),
   title: "PCIN Awards - Photography & Cinematography Excellence",
   description:
     "Photography and Cinematography Industry Night and Awards – celebrating excellence, creativity, and visual storytelling across Africa.",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   authors: [{ name: "PCIN Awards" }],
   robots: "index, follow",
   alternates: {
-    canonical: "https://pcin-awards.vercel.app",
+    canonical: "https://pcin-awards.pxxl.pro",
   },
   icons: {
     icon: "/pcinlogo.svg",
@@ -67,11 +67,11 @@ export const metadata: Metadata = {
     title: "PCIN Awards - Celebrating Creative Excellence",
     description:
       "Join the biggest celebration of photography & cinematography talent in Africa – PCIN Awards.",
-    url: "https://pcin-awards.vercel.app",
+    url: "https://pcin-awards.pxxl.pro",
     siteName: "PCIN Awards",
     images: [
       {
-        url: "https://pcin-awards.vercel.app/og-image.png",
+        url: "https://pcin-awards.pxxl.pro/og-image.png",
         width: 1200,
         height: 630,
         alt: "PCIN Awards - Photography & Cinematography Industry Night",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     title: "PCIN Awards - Celebrating Creative Excellence",
     description:
       "Join the biggest celebration of photography & cinematography talent in Africa – PCIN Awards.",
-    images: ["/https://pcin-awards.vercel.app/og-image.png"],
+    images: ["https://pcin-awards.pxxl.pro/og-image.png"],
   },
 };
 
