@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     siteName: "PCIN Awards",
     images: [
       {
-        url: "https://pcin-awards.pxxl.pro/og-image.png",
+        url: "https://pcin-awards.pxxl.pro/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "PCIN Awards - Photography & Cinematography Industry Night",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     title: "PCIN Awards - Celebrating Creative Excellence",
     description:
       "Join the biggest celebration of photography & cinematography talent in Africa – PCIN Awards.",
-    images: ["https://pcin-awards.pxxl.pro/og-image.png"],
+    images: ["https://pcin-awards.pxxl.pro/og-image.jpg"],
   },
 };
 
