@@ -49,7 +49,7 @@ const CATEGORIES = [
   "Event Media Blog of the Year",
   "Photopreneur of the year",
   "Frame Vendor of the year",
-  "Studio Equipment of the year"
+  "Studio Equipment vendor of the year"
 ];
 
 export function NominateNowDialog() {
