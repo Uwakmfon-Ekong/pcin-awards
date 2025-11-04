@@ -14,7 +14,7 @@ import { toast } from "sonner";
 
 const ACCESS_KEY = "aff88a10-4122-4d6c-9a2d-d445b9da2ca3";
 
-// Replace this array with your actual categories
+
 const CATEGORIES = [
  "Life Time Achievement Award",
   "Legendary Photography/Cinematography Industry Icon Award",
@@ -49,6 +49,7 @@ const CATEGORIES = [
   "Event Media Blog of the Year",
   "Photopreneur of the year",
   "Frame Vendor of the year",
+  "Studio Equipment of the year"
 ];
 
 export function NominateNowDialog() {
@@ -60,7 +61,7 @@ export function NominateNowDialog() {
     nomineeName: "",
     category: CATEGORIES[0],
     subject: "",
-    hp: "", // honeypot for spam
+    hp: "", 
   });
 
   const [loading, setLoading] = useState(false);
